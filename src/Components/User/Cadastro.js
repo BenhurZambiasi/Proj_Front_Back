@@ -46,6 +46,7 @@ const Cadastro = () => {
           <Input label="Descrição" type="text" name="descricao" {...descricao} />
           <Input label="Logo" type="file" name="logo" {...logo} />
           <Input label="Manual" type="file" name="manual" {...manual} />
+
           <Button type="submit">Cadastrar</Button>
         </form>
       </div>

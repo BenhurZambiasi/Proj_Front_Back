@@ -13,13 +13,11 @@ const Header = () => {
         <Link className={styles.logo} to="/login" aria-label="Home"> <Home /> </Link>
         <h1>Casa das Ferragens</h1>
 
-        {data ? (<Link className={styles.login} to="/"> {data.user.email} </Link>) : (
+        {data ? (<p className={styles.login} > {data.user.email} </p>) : (
           <Link className={styles.login} to="/login">
             Login / Criar
           </Link>
         )}
-
-        {/* <Link className={styles.login} to="/login"> Login / Criar  </Link> */}
       </nav>
     </header>
   );
