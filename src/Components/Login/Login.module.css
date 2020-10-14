@@ -1,0 +1,12 @@
+.login{
+  display: grid;
+  grid-template-columns: 1fr ;
+  background-color:white;
+  margin: 9rem;
+}
+
+.forms{
+  margin: 0 auto;
+  max-width: 50rem;
+  padding: 1rem;
+}

@@ -1,0 +1,36 @@
+
+.form {
+  margin-bottom: 4rem;
+  margin-top: 1rem;
+  width: 35rem;
+}
+
+
+.cadastro {
+  margin-top: 2.6rem;
+  width: 35rem;
+}
+
+.cadastro p {
+  margin-top: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+.title{
+  font-size: 2rem;
+}
+
+.subtitle {
+  font-family: var(--type-second);
+  line-height: 1;
+  font-size: 2rem;
+}
+
+.subtitle::after {
+  content: '';
+  display: block;
+  background: darkgreen;
+  height: 0.5rem;
+  width: 12.2rem;
+  border-radius: 0.2rem;
+}
