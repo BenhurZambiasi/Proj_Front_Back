@@ -7,6 +7,7 @@ export const UseContext = React.createContext();
 
 export const UseStorage = ({ children }) => {
   const [data, setData] = React.useState('');
+  const [listas, setList] = React.useState([]);
 
   const navigate = useNavigate();
 
@@ -67,6 +68,7 @@ export const UseStorage = ({ children }) => {
         }
       }).then(response => {
         if (response.statusText === "OK") {
+          setList(response.data)
           console.log(response)
         } else {
           alert("")
@@ -82,6 +84,7 @@ export const UseStorage = ({ children }) => {
         }
       }).then(response => {
         if (response.statusText === "OK") {
+          setList(response.data)
           console.log(response)
         } else {
           alert("")
@@ -93,12 +96,9 @@ export const UseStorage = ({ children }) => {
     }
   }
 
-
-
-
   //atualiar cadastro
   function updateProduct(id, name, descricao, logo, manual) {
-    Api.put('/products', { id, name, descricao, logo, manual }, {
+    Api.put(`/products/${id}`, { name, descricao, logo, manual }, {
       headers: {
         Authorization: 'Bearer ' + sessionStorage.getItem('token')
       }
@@ -114,8 +114,18 @@ export const UseStorage = ({ children }) => {
     })
   }
 
+
+  //Deletar Produto
+  function deleteProduct(id) {
+    Api.delete('/products', { id }, {
+      headers: {
+        Authorization: 'Bearer ' + sessionStorage.getItem('token')
+      }
+    })
+  }
+
   return (
-    <UseContext.Provider value={{ userLogin, userCreate, createProduct, listarProduct, updateProduct, data }}>
+    <UseContext.Provider value={{ userLogin, userCreate, createProduct, listarProduct, updateProduct, deleteProduct, data, listas }}>
       {children}
     </UseContext.Provider>
   )
