@@ -11,6 +11,7 @@ export const UseStorage = ({ children }) => {
 
   const navigate = useNavigate();
 
+  //-------------------USUÁRIOS ------------------------------------------//
   //cadastro de usuários
   function userCreate(name, email, password) {
     Api.post('/users', { name, email, password }).then(response => {
@@ -24,11 +25,21 @@ export const UseStorage = ({ children }) => {
     })
   }
 
+  function getUser(token) {
+    Api.get('/sessions', {
+      headers: {
+        Authorization: 'Bearer ' + token
+      }
+    })
+  }
+
+
   //Login do usuário
   function userLogin(email, password) {
     Api.post('/sessions', { email, password }).then(response => {
       if (response.data.user.id) {
         sessionStorage.setItem("token", response.data.token)
+        getUser(sessionStorage.getItem('token'))
         navigate('/user')
       }
       sessionStorage.getItem('token');
@@ -39,6 +50,7 @@ export const UseStorage = ({ children }) => {
     })
   }
 
+  //----------------------------PRODUTOS --------------------------------------//
 
   //cadastro de produto
   function createProduct(name, descricao, logo, manual) {
@@ -112,9 +124,8 @@ export const UseStorage = ({ children }) => {
       console.log(err)
       alert(err)
     })
+
   }
-
-
   //Deletar Produto
   function deleteProduct(id) {
     Api.delete('/products', { id }, {

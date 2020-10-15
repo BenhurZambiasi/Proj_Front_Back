@@ -2,7 +2,7 @@ import React from 'react'
 import useForm from '../../Hooks/useForm';
 import Button from '../Forms/Button';
 import Input from '../Forms/Input';
-import styles from './Organizador.module.css'
+import styles from './Cadastro.module.css'
 import { useNavigate } from 'react-router-dom';
 import { UseContext } from '../../UseContext';
 
@@ -20,15 +20,11 @@ const Cadastro = () => {
 
   const navigate = useNavigate();
 
-
-
   function handleSubmitCadastro(event) {
     event.preventDefault();
     createProduct(name.value, descricao.value, logo.value, manual.value);
 
   }
-
-
 
 
   return (

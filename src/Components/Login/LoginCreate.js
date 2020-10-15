@@ -12,7 +12,7 @@ import stylesBtn from '../Forms/Button.module.css';
 
 const LoginCreate = () => {
   const name = useForm();
-  const email = useForm();
+  const email = useForm('email');
   const password = useForm();
 
   const { userCreate } = React.useContext(UseContext);

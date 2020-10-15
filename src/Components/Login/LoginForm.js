@@ -9,7 +9,7 @@ import useForm from '../../Hooks/useForm';
 
 const LoginForm = () => {
 
-  const email = useForm();
+  const email = useForm('email');
   const password = useForm();
 
   const { userLogin } = React.useContext(UseContext);

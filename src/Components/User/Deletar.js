@@ -4,7 +4,7 @@ import { UseContext } from '../../UseContext';
 import useForm from '../../Hooks/useForm';
 import Button from '../Forms/Button';
 import Input from '../Forms/Input';
-import styles from './Organizador.module.css'
+import styles from './Deletar.module.css'
 
 const Deletar = () => {
 
@@ -12,7 +12,8 @@ const Deletar = () => {
   const { deleteProduct } = React.useContext(UseContext);
   const navigate = useNavigate();
 
-  async function handleDelete() {
+  async function handleDelete(event) {
+    event.preventDefault();
     deleteProduct(id.value);
   }
 
@@ -27,9 +28,10 @@ const Deletar = () => {
         <Button >Excluir</Button>
       </div>
       <div className={styles.form}>
-
-        <Input label="ID" type="number" name="id"{...id} />
-        <Button onClick={handleDelete}>Excluir</Button>
+        <form onSubmit={handleDelete}>
+          <Input label="ID" type="number" name="id"{...id} />
+          <Button type="submit">Excluir</Button>
+        </form>
 
       </div>
 

@@ -38,3 +38,7 @@
     background-size: cover;
     
   }
+  .btnList{
+    display: flex;
+    gap: 1rem;
+  }

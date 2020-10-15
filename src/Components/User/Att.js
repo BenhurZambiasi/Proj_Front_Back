@@ -4,7 +4,7 @@ import useForm from '../../Hooks/useForm';
 import { UseContext } from '../../UseContext';
 import Button from '../Forms/Button';
 import Input from '../Forms/Input';
-import styles from './Organizador.module.css'
+import styles from './Att.module.css'
 
 
 const Att = () => {
@@ -22,6 +22,8 @@ const Att = () => {
   async function handleAtualiza(event) {
     event.preventDefault();
     updateProduct(id.value, name.value, descricao.value, logo.value, manual.value)
+
+    
 
   }
 

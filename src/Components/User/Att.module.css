@@ -1,0 +1,16 @@
+.organizador{
+  width: 600px; 
+  display: flex;
+  gap: 2rem;
+  margin: 0 auto;
+  
+  }
+  .form{
+    margin-top: 5rem;
+    width:80rem;
+  
+  }
+  .btn{
+    margin-top: 5rem;
+    width: 100%;
+  }

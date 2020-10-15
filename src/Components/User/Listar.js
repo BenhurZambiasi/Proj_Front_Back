@@ -7,7 +7,7 @@ import Input from '../Forms/Input';
 import styles from './Listar.module.css'
 
 const Listar = () => {
-  const id = useForm();
+  const id = useForm(false);
   const { listarProduct, listas } = React.useContext(UseContext);
   const navigate = useNavigate();
 
@@ -15,6 +15,7 @@ const Listar = () => {
     event.preventDefault();
     listarProduct(id.value)
   }
+
 
 
 
@@ -36,7 +37,7 @@ const Listar = () => {
       </div>
       <div className={styles.list}>
         {listas.map((list) =>
-          <div className={styles.lista} key={list.id}>
+          <div className={`animeLeft ${styles.lista}`} key={list.id}>
             <div className={styles.img}></div>
             <div>
               <p>ID: {list.id}</p>
