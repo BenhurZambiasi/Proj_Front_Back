@@ -7,16 +7,14 @@ import { useNavigate } from 'react-router-dom';
 import { UseContext } from '../../UseContext';
 
 
-
-
 const Cadastro = () => {
 
   const { createProduct } = React.useContext(UseContext);
 
   const name = useForm();
   const descricao = useForm();
-  const logo = useForm();
-  const manual = useForm();
+  const logo = useForm(false);
+  const manual = useForm(false);
 
   const navigate = useNavigate();
 

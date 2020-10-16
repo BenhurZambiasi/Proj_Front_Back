@@ -124,7 +124,6 @@ export const UseStorage = ({ children }) => {
       console.log(err)
       alert(err)
     })
-
   }
   //Deletar Produto
   function deleteProduct(id) {

@@ -1,34 +1,70 @@
 .organizador{
-  width: 1vh; 
+  width:90%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
-  margin: 5rem 15rem;
-  
-  }
-  .form{
-    margin-top: 5rem;
-    width:10rem;
-  
+  margin: 2rem  auto;
+  justify-content: center;
   }
   .btn{
-    margin-top: 5rem;
-    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    gap: 2rem;
+  }
+  .form{
+    margin: 0 9rem;
+    width:17rem;
+  }
+  .form button{
+    margin: -4.6rem 0 0 20rem ;
+  }
+
+  .containerList{
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+    overflow: scroll;
+    overflow-x: hidden;
+    width: 840px;
+    height: 32rem;
+  }
+
+  .containerList::-webkit-scrollbar {
+    width: 15px;
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: white;
+    border-radius: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: darkgreen;
+    border-radius: 5px;
   }
   .list{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 10px;
+  
   }
-  .lista{
+  .product{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
     border: 5px solid black;
     border-radius: 8px;
+    height: 7rem;
   }
-  .lista:hover, 
-  .lista:focus{
+
+  .lista{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    border-radius: 8px solid black;
+  
+  }
+  .product:hover, 
+  .product:focus{
     border: 5px solid darkgreen;
   }
   .img{
@@ -36,9 +72,8 @@
     width: 100px;
     height: 100px;
     background-size: cover;
-    
   }
   .btnList{
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
   }

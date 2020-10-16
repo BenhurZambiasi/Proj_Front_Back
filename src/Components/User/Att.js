@@ -11,20 +11,18 @@ const Att = () => {
   const id = useForm();
   const name = useForm();
   const descricao = useForm();
-  const logo = useForm();
-  const manual = useForm();
+  const logo = useForm(false);
+  const manual = useForm(false);
 
-  const { updateProduct } = React.useContext(UseContext);
+  const { updateProduct, listarProduct } = React.useContext(UseContext);
 
   const navigate = useNavigate();
 
 
-  async function handleAtualiza(event) {
-    event.preventDefault();
+  function handleAtualiza() {
     updateProduct(id.value, name.value, descricao.value, logo.value, manual.value)
-
-    
-
+    navigate('/user/listar')
+    listarProduct()
   }
 
   return (
