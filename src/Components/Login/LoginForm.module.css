@@ -20,7 +20,14 @@
   font-size: 2rem;
 }
 
-
+.logout{
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+h2{
+  text-align: center;
+}
 
 h1::after {
   content: '';

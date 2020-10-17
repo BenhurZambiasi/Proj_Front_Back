@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Input from '../Forms/Input';
 import Button from '../Forms/Button';
 import styles from './LoginForm.module.css';
@@ -14,18 +14,35 @@ const LoginForm = () => {
 
   const { userLogin } = React.useContext(UseContext);
 
+  const navigate = useNavigate();
+
   function handleSubmit(event) {
     event.preventDefault();
 
     const userEmail = event.target.elements.email.value;
-    const userPassword = event.target.elements.password.value;
+
     sessionStorage.setItem('@welcome-app/email', userEmail)
-    sessionStorage.setItem('@welcome-app/password', userPassword)
-    userLogin(userEmail, userPassword);
+    userLogin(email.value, password.value);
   }
 
+  function handleLogout() {
+    sessionStorage.removeItem('@welcome-app/email')
+    window.location.reload()
+  }
 
+  const username = sessionStorage.getItem('@welcome-app/email');
 
+  if (username) {
+    return (
+      <div >
+        <h2>Bem vindo {username}</h2>
+        <div className={styles.logout}>
+          <Button onClick={handleLogout}>Sair</Button>
+          <Button onClick={() => navigate('/user')}>Voltar</Button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <section className="animeLeft">
