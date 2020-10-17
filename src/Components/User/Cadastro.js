@@ -21,7 +21,7 @@ const Cadastro = () => {
   function handleSubmitCadastro(event) {
     event.preventDefault();
     createProduct(name.value, descricao.value, logo.value, manual.value);
-
+    navigate('/user')
   }
 
 
@@ -34,17 +34,16 @@ const Cadastro = () => {
         <Button onClick={() => navigate('/user/atualizar')}> Atualizar Cadastro </Button>
         <Button onClick={() => navigate('/user/deletar')}>Excluir</Button>
       </div >
+
       <div className={styles.form}>
         <form className="animeLeft" onSubmit={handleSubmitCadastro}>
-          <Input label="Nome" type="text" name="name" {...name} />
-          <Input label="Descrição" type="text" name="descricao" {...descricao} />
+          <Input label="Nome" type="text" name="name"  {...name} />
+          <Input label="Descrição" type="text" name="descricao"  {...descricao} />
           <Input label="Logo" type="file" name="logo" {...logo} />
           <Input label="Manual" type="file" name="manual" {...manual} />
-
           <Button type="submit">Cadastrar</Button>
         </form>
       </div>
-
 
     </section>
   )

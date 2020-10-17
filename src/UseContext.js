@@ -1,7 +1,9 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import Api from './Services/Api'
+import swal from 'sweetalert';
 
+//sweetalert -  é uma biblioteca que permite o uso de modal personalizado no lugar de um alert() do javascript
 
 export const UseContext = React.createContext();
 
@@ -18,18 +20,10 @@ export const UseStorage = ({ children }) => {
       if (response.data.id) {
         navigate('/login')
       } else {
-        alert("Não foi possível cadastrar.")
+        swal("E-mail já existe", "", "error")
       }
     }, () => {
-      alert("E-mail já existe")
-    })
-  }
-
-  function getUser(token) {
-    Api.get('/sessions', {
-      headers: {
-        Authorization: 'Bearer ' + token
-      }
+      swal("E-mail já existe", "", "error")
     })
   }
 
@@ -39,14 +33,13 @@ export const UseStorage = ({ children }) => {
     Api.post('/sessions', { email, password }).then(response => {
       if (response.data.user.id) {
         sessionStorage.setItem("token", response.data.token)
-        getUser(sessionStorage.getItem('token'))
         navigate('/user')
       }
       sessionStorage.getItem('token');
       setData(response.data)
     }, (err) => {
       console.log(err)
-      alert("E-mail ou senha inválido")
+      swal("E-mail ou senha inválido", "", "error")
     })
   }
 
@@ -60,13 +53,14 @@ export const UseStorage = ({ children }) => {
       }
     }).then(response => {
       if (response.data.id) {
-        console.log(response)
+        swal('Cadastrado com sucesso', "", "success")
+
       } else {
-        alert("Não foi possível cadastrar.")
+        swal("Não foi possível cadastrar.", "já existe produto com esse o nome", "error")
       }
     }, (err) => {
       console.log(err)
-      alert(err)
+      swal("Não foi possível cadastrar.", "já existe produto com esse o nome", "error")
     })
   }
 
@@ -82,12 +76,10 @@ export const UseStorage = ({ children }) => {
         if (response.statusText === "OK") {
           setList(response.data)
           console.log(response)
-        } else {
-          alert("")
         }
       }, (err) => {
         console.log(err)
-        alert(err)
+        swal("Não existem produtos cadastrados", "", "error")
       })
     } else {
       Api.get(`/products/${id}`, {
@@ -97,13 +89,12 @@ export const UseStorage = ({ children }) => {
       }).then(response => {
         if (response.statusText === "OK") {
           setList(response.data)
-          console.log(response)
         } else {
-          alert("")
+          swal("Id não encontrado", "informe um id válido", "error")
         }
       }, (err) => {
         console.log(err)
-        alert(err)
+        swal("Id não encontrado", "informe um id válido", "error")
       })
     }
   }
@@ -115,23 +106,50 @@ export const UseStorage = ({ children }) => {
         Authorization: 'Bearer ' + sessionStorage.getItem('token')
       }
     }).then(response => {
+      console.log(response)
       if (response.data.id) {
-        console.log(response)
       } else {
-        alert("Não foi possível cadastrar.")
+        swal("Falha ao atualizar cadastro.", "Id inválido", "error")
       }
     }, (err) => {
       console.log(err)
-      alert(err)
+      swal("Falha ao atualizar cadastro.", "Id inválido", "error")
     })
   }
+
+
+
   //Deletar Produto
   function deleteProduct(id) {
-    Api.delete('/products', { id }, {
-      headers: {
-        Authorization: 'Bearer ' + sessionStorage.getItem('token')
+    swal({
+      title: "Tem certeza que deseja excluir?",
+      text: "Após exlcuir não é possível recuperar os dados ",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        Api.delete(`/products/${id}`, {
+          headers: {
+            Authorization: 'Bearer ' + sessionStorage.getItem('token')
+          }
+        }).then(response => {
+          if (response.statusText === "OK") {
+          } else {
+            swal("Id não encontrado", "informe um id válido", "error")
+          }
+        }, (err) => {
+          console.log(err)
+          swal("Id não encontrado", "informe um id válido", "error")
+        })
+        swal("Produto excluido com sucesso!!", {
+          icon: "success",
+        });
+      } else {
+        swal("Operação cancelada!");
       }
-    })
+    });
+
   }
 
   return (

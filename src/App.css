@@ -45,8 +45,10 @@ a , button{
 }
 
 .title{
-  font-size: 2rem;
+  font-size: 3rem;
+  color: black;
 }
+
 
 .container {
   max-width: 80rem;
@@ -56,7 +58,7 @@ a , button{
 
 .animeLeft {
   opacity: 0;
-  transform: translateX(-20px);
+  transform: translateY(-20px);
   animation: animeLeft 0.3s forwards;
 }
 

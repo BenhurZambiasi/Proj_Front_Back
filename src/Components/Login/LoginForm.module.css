@@ -20,17 +20,13 @@
   font-size: 2rem;
 }
 
-.subtitle {
-  font-family: var(--type-second);
-  line-height: 1;
-  font-size: 2rem;
-}
 
-.subtitle::after {
+
+h1::after {
   content: '';
   display: block;
   background: darkgreen;
   height: 0.5rem;
-  width: 12.2rem;
+  width: 4rem;
   border-radius: 0.2rem;
 }

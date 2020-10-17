@@ -14,6 +14,7 @@ const Att = () => {
   const logo = useForm(false);
   const manual = useForm(false);
 
+
   const { updateProduct, listarProduct } = React.useContext(UseContext);
 
   const navigate = useNavigate();
@@ -21,9 +22,10 @@ const Att = () => {
 
   function handleAtualiza() {
     updateProduct(id.value, name.value, descricao.value, logo.value, manual.value)
-    navigate('/user/listar')
     listarProduct()
+    navigate('/user/listar')
   }
+
 
   return (
     <div className={styles.organizador}>
@@ -37,8 +39,8 @@ const Att = () => {
       <div className={styles.form}>
         <form className="animeLeft" onSubmit={handleAtualiza}>
           <Input label="ID" type="number" name="id"{...id} />
-          <Input label="Nome" type="text" name="name"{...name} />
-          <Input label="Descrição" type="text" name="descricao" {...descricao} />
+          <Input label="Nome" type="text" name="name" autoComplete="off" {...name} />
+          <Input label="Descrição" type="text" name="descricao" autoComplete="off" {...descricao} />
           <Input label="Logo" type="file" name="logo" {...logo} />
           <Input label="Manual" type="file" name="manual" {...manual} />
           <Button type='submit'>Atualizar Cadastro</Button>

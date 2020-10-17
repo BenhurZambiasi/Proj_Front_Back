@@ -16,8 +16,14 @@ const LoginForm = () => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    userLogin(email.value, password.value);
+
+    const userEmail = event.target.elements.email.value;
+    const userPassword = event.target.elements.password.value;
+    sessionStorage.setItem('@welcome-app/email', userEmail)
+    sessionStorage.setItem('@welcome-app/password', userPassword)
+    userLogin(userEmail, userPassword);
   }
+
 
 
 

@@ -29,26 +29,23 @@ const Listar = () => {
 
       <div className={styles.form}>
         <form className="animeLeft" onSubmit={handleList}>
-          <Input type="number" name="id"{...id} placeholder="informe o id ou deixe em branco" />
+          <h4>Para listar todos clique em buscar</h4>
+          <Input type="number" name="id"{...id} placeholder="informe o id do produto" />
           <Button type="submit">Buscar</Button>
         </form>
       </div>
 
       <div className={styles.containerList}>
         <div className={styles.list}>
-          {listas.map((list) =>
+          {listas.map((list, index) =>
             <div className={`animeLeft ${styles.lista}`} key={list.id}>
               <div className={styles.product}>
                 <div className={styles.img}></div>
-                <div>
-                  <p>ID: {list.id}</p>
-                  <p>Nome: {list.name}</p>
-                  <p>Descrição: {list.descricao}</p>
-                  <p>Manual:{list.manual}</p>
-                  {/* <div className={styles.btnList}>
-                <button>Excluir</button>
-                <button onClick={() => navigate('/user/atualizar')}>Atualizar</button>
-              </div> */}
+                <div className={styles.p}>
+                  <p><strong>ID :</strong>{list.id}</p>
+                  <p><strong>Nome: </strong> {list.name}</p>
+                  <p><strong>Descrição: </strong> {list.descricao}</p>
+                  <p><strong>Manual:</strong> {list.manual}</p>
                 </div>
               </div>
             </div>)}

@@ -17,7 +17,6 @@ const Deletar = () => {
     deleteProduct(id.value);
   }
 
-
   return (
     <div className={styles.organizador}>
 
@@ -28,7 +27,7 @@ const Deletar = () => {
         <Button >Excluir</Button>
       </div>
       <div className={styles.form}>
-        <form onSubmit={handleDelete}>
+        <form className="animeLeft" onSubmit={handleDelete}>
           <Input label="ID" type="number" name="id"{...id} />
           <Button type="submit">Excluir</Button>
         </form>
