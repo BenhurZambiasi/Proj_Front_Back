@@ -6,14 +6,27 @@ import Button from '../Forms/Button';
 import Input from '../Forms/Input';
 import styles from './Listar.module.css'
 
+
 const Listar = () => {
+
   const id = useForm(false);
-  const { listarProduct, listas } = React.useContext(UseContext);
+  const { listarProduct, listas, deleteProduct, getListAtt } = React.useContext(UseContext);
   const navigate = useNavigate();
+
 
   async function handleList(event) {
     event.preventDefault();
     listarProduct(id.value)
+  }
+
+  function getIdDelete(id) {
+    const del = id;
+    deleteProduct(del)
+  }
+
+  function getList(id) {
+    getListAtt(id)
+    navigate('/user/atualizar')
   }
 
 
@@ -22,9 +35,7 @@ const Listar = () => {
 
       <div className={styles.btn}>
         <Button onClick={() => navigate('/user')}>Cadastrar</Button>
-        <Button >Listar</Button>
-        <Button onClick={() => navigate('/user/atualizar')}> Atualizar Cadastro </Button>
-        <Button onClick={() => navigate('/user/deletar')}>Excluir</Button>
+        <Button className={styles.active}>Listar</Button>
       </div>
 
       <div className={styles.form}>
@@ -37,15 +48,20 @@ const Listar = () => {
 
       <div className={styles.containerList}>
         <div className={styles.list}>
-          {listas.map((list, index) =>
+          {listas.map((list) =>
             <div className={`animeLeft ${styles.lista}`} key={list.id}>
               <div className={styles.product}>
                 <div className={styles.img}></div>
                 <div className={styles.p}>
+
                   <p><strong>ID :</strong>{list.id}</p>
                   <p><strong>Nome: </strong> {list.name}</p>
                   <p><strong>Descrição: </strong> {list.descricao}</p>
                   <p><strong>Manual:</strong> {list.manual}</p>
+                  <div className={styles.btnList}>
+                    <button className={styles.btnDelete} onClick={() => getIdDelete(list.id)}>Deletar</button>
+                    <button className={styles.btnDelete} onClick={() => getList(list.id)}>Atualizar</button>
+                  </div>
                 </div>
               </div>
             </div>)}
@@ -56,4 +72,4 @@ const Listar = () => {
   )
 }
 
-export default Listar
+export default Listar;

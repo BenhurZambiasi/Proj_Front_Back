@@ -8,8 +8,11 @@
   .btn{
     display: flex;
     gap: 2rem;
-
   }
+  .btn :nth-last-child(1){
+    background-color: darkgreen;
+  }
+
   .form{
     width:20rem;
   }

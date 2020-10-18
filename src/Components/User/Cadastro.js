@@ -18,10 +18,10 @@ const Cadastro = () => {
 
   const navigate = useNavigate();
 
+
   function handleSubmitCadastro(event) {
     event.preventDefault();
     createProduct(name.value, descricao.value, logo.value, manual.value);
-    navigate('/user')
   }
 
 
@@ -31,8 +31,6 @@ const Cadastro = () => {
       <div className={styles.btn}>
         <Button >Cadastrar</Button>
         <Button onClick={() => navigate('/user/listar')}>Listar</Button>
-        <Button onClick={() => navigate('/user/atualizar')}> Atualizar Cadastro </Button>
-        <Button onClick={() => navigate('/user/deletar')}>Excluir</Button>
       </div >
 
       <div className={styles.form}>

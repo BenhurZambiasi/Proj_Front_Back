@@ -5,11 +5,18 @@
   margin: 2rem  auto;
   justify-content: center;
   }
+
+
   .btn{
     display: flex;
     margin: 0 auto;
     gap: 2rem;
   }
+  .btn :nth-last-child(1){
+    background-color: darkgreen;
+  }
+
+  
   .form{
     margin: 0 9rem;
     width:17rem;
@@ -55,6 +62,7 @@
    
   }
 
+
   .lista{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -76,3 +84,28 @@
     width: 16rem;
     word-wrap: break-word;
   }
+  .btnList{
+    display: flex;
+    margin: 0 auto;
+    gap: 2rem;
+  }
+
+  .btnDelete{
+  font-size: 1rem;
+  font-family: var(--type-first);
+  cursor: pointer;
+  border: none;
+  border-radius: 0.4rem;
+  background: black;
+  color: white;
+  min-width: 2rem;
+  box-sizing: border-box;
+  transition: 0.1s;
+  }
+.btnDelete:hover,
+.btnDelete:focus {
+  outline: none;
+  background-color: darkgreen;
+}
+
+

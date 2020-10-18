@@ -7,9 +7,15 @@
   }
   .btn{
     display: flex;
+    margin: 0 auto;
     gap: 2rem;
 
   }
+
+  .btn :nth-last-child(2){
+    background-color: darkgreen;
+  }
+
   .form{
     width:35rem;
   }

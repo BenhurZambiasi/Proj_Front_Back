@@ -23,6 +23,7 @@ const LoginForm = () => {
 
     sessionStorage.setItem('@welcome-app/email', userEmail)
     userLogin(email.value, password.value);
+    navigate('/user')
   }
 
   function handleLogout() {

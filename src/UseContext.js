@@ -11,6 +11,10 @@ export const UseStorage = ({ children }) => {
   const [data, setData] = React.useState('');
   const [listas, setList] = React.useState([]);
 
+
+  const [idAtt, setIdAtt] = React.useState(' ');
+
+
   const navigate = useNavigate();
 
   //-------------------USUÁRIOS ------------------------------------------//
@@ -117,7 +121,9 @@ export const UseStorage = ({ children }) => {
     })
   }
 
-
+  function getListAtt(id) {
+    setIdAtt(id)
+  }
 
   //Deletar Produto
   function deleteProduct(id) {
@@ -149,11 +155,10 @@ export const UseStorage = ({ children }) => {
         swal("Operação cancelada!");
       }
     });
-
   }
 
   return (
-    <UseContext.Provider value={{ userLogin, userCreate, createProduct, listarProduct, updateProduct, deleteProduct, data, listas }}>
+    <UseContext.Provider value={{ userLogin, userCreate, createProduct, listarProduct, updateProduct, deleteProduct, data, listas, getListAtt, idAtt }}>
       {children}
     </UseContext.Provider>
   )

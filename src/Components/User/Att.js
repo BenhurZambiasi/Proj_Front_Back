@@ -8,6 +8,8 @@ import styles from './Att.module.css'
 
 
 const Att = () => {
+
+  const { updateProduct, listarProduct, idAtt } = React.useContext(UseContext);
   const id = useForm();
   const name = useForm();
   const descricao = useForm();
@@ -15,13 +17,14 @@ const Att = () => {
   const manual = useForm(false);
 
 
-  const { updateProduct, listarProduct } = React.useContext(UseContext);
+
+
 
   const navigate = useNavigate();
 
 
   function handleAtualiza() {
-    updateProduct(id.value, name.value, descricao.value, logo.value, manual.value)
+    updateProduct(idAtt, name.value, descricao.value, logo.value, manual.value)
     listarProduct()
     navigate('/user/listar')
   }
@@ -30,15 +33,14 @@ const Att = () => {
   return (
     <div className={styles.organizador}>
 
-      <div className={styles.btn}>
+      <div  className={styles.btn}>
         <Button onClick={() => navigate('/user')}>Cadastrar</Button>
         <Button onClick={() => navigate('/user/listar')}>Listar</Button>
         <Button > Atualizar Cadastro </Button>
-        <Button onClick={() => navigate('/user/deletar')}>Excluir</Button>
       </div>
       <div className={styles.form}>
         <form className="animeLeft" onSubmit={handleAtualiza}>
-          <Input label="ID" type="number" name="id"{...id} />
+          <Input label="ID" type="number" name="id"{...id} value={idAtt} />
           <Input label="Nome" type="text" name="name" autoComplete="off" {...name} />
           <Input label="Descrição" type="text" name="descricao" autoComplete="off" {...descricao} />
           <Input label="Logo" type="file" name="logo" {...logo} />

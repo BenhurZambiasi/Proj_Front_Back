@@ -10,15 +10,17 @@ import { UseStorage } from './UseContext';
 
 function App() {
   return (
-    <div>
+    <div >
       <BrowserRouter>
         <UseStorage>
           <Header />
+
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/login/*" element={<Login />} />
             <Route path="/user/*" element={<User />} />
           </Routes>
+
           <Footer />
         </UseStorage>
       </BrowserRouter>
