@@ -58,9 +58,12 @@ const Listar = () => {
                   <p><strong>Nome: </strong> {list.name}</p>
                   <p><strong>Descrição: </strong> {list.descricao}</p>
                   <p><strong>Manual:</strong> {list.manual}</p>
+
                   <div className={styles.btnList}>
-                    <button className={styles.btnDelete} onClick={() => getIdDelete(list.id)}>Deletar</button>
-                    <button className={styles.btnDelete} onClick={() => getList(list.id)}>Atualizar</button>
+
+                    <button className={styles.btnsList} onClick={() => getIdDelete(list.id)}>Deletar</button>
+                    <button className={styles.btnsList} onClick={() => getList(list.id)}>Atualizar</button>
+
                   </div>
                 </div>
               </div>

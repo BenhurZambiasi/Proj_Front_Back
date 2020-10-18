@@ -18,7 +18,6 @@ const LoginForm = () => {
 
   function handleSubmit(event) {
     event.preventDefault();
-
     const userEmail = event.target.elements.email.value;
 
     sessionStorage.setItem('@welcome-app/email', userEmail)
@@ -39,7 +38,7 @@ const LoginForm = () => {
         <h2>Bem vindo {username}</h2>
         <div className={styles.logout}>
           <Button onClick={handleLogout}>Sair</Button>
-          <Button onClick={() => navigate('/user')}>Voltar</Button>
+          <Button onClick={() => navigate('/user')}>Home</Button>
         </div>
       </div>
     );

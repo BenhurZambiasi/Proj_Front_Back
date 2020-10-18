@@ -55,6 +55,9 @@ a , button{
   padding: 0 1rem;
   margin: 0 auto;
 }
+.mainContainer {
+  margin-top: 2rem;
+}
 
 .animeLeft {
   opacity: 0;

@@ -11,9 +11,7 @@ export const UseStorage = ({ children }) => {
   const [data, setData] = React.useState('');
   const [listas, setList] = React.useState([]);
 
-
   const [idAtt, setIdAtt] = React.useState(' ');
-
 
   const navigate = useNavigate();
 
@@ -30,6 +28,7 @@ export const UseStorage = ({ children }) => {
       swal("E-mail já existe", "", "error")
     })
   }
+  //----fim da função--------//
 
 
   //Login do usuário
@@ -46,6 +45,7 @@ export const UseStorage = ({ children }) => {
       swal("E-mail ou senha inválido", "", "error")
     })
   }
+  //----fim da função--------//
 
   //----------------------------PRODUTOS --------------------------------------//
 
@@ -67,6 +67,7 @@ export const UseStorage = ({ children }) => {
       swal("Não foi possível cadastrar.", "já existe produto com esse o nome", "error")
     })
   }
+  //----fim da função--------//
 
 
   //lista todos os produtos
@@ -102,6 +103,7 @@ export const UseStorage = ({ children }) => {
       })
     }
   }
+  //----fim da função--------//
 
   //atualiar cadastro
   function updateProduct(id, name, descricao, logo, manual) {
@@ -120,10 +122,13 @@ export const UseStorage = ({ children }) => {
       swal("Falha ao atualizar cadastro.", "Id inválido", "error")
     })
   }
+  //----fim da função--------//
 
+  //função para setar o id recebido do botão de atualizar da rota listar no campo Id da  rota atualizar
   function getListAtt(id) {
     setIdAtt(id)
   }
+  //----fim da função--------//
 
   //Deletar Produto
   function deleteProduct(id) {
@@ -156,6 +161,7 @@ export const UseStorage = ({ children }) => {
       }
     });
   }
+  //----fim da função--------//
 
   return (
     <UseContext.Provider value={{ userLogin, userCreate, createProduct, listarProduct, updateProduct, deleteProduct, data, listas, getListAtt, idAtt }}>

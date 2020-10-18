@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import LoginForm from './LoginForm'
 import LoginCreate from './LoginCreate'
 import styles from './Login.module.css'
+import NotFound from '../NotFound';
 
 
 const Login = () => {
@@ -12,6 +13,7 @@ const Login = () => {
         <Routes>
           <Route path="/" element={<LoginForm />} />
           <Route path="criar" element={<LoginCreate />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </section>

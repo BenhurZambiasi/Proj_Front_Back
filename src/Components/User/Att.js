@@ -10,15 +10,12 @@ import styles from './Att.module.css'
 const Att = () => {
 
   const { updateProduct, listarProduct, idAtt } = React.useContext(UseContext);
+  
   const id = useForm();
   const name = useForm();
   const descricao = useForm();
   const logo = useForm(false);
   const manual = useForm(false);
-
-
-
-
 
   const navigate = useNavigate();
 

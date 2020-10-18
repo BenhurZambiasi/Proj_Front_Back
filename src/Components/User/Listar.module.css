@@ -16,7 +16,7 @@
     background-color: darkgreen;
   }
 
-  
+
   .form{
     margin: 0 9rem;
     width:17rem;
@@ -90,20 +90,20 @@
     gap: 2rem;
   }
 
-  .btnDelete{
+  .btnsList{
   font-size: 1rem;
   font-family: var(--type-first);
   cursor: pointer;
   border: none;
-  border-radius: 0.4rem;
+  border-radius: 0.2rem;
   background: black;
   color: white;
   min-width: 2rem;
   box-sizing: border-box;
   transition: 0.1s;
   }
-.btnDelete:hover,
-.btnDelete:focus {
+.btnsList:hover,
+.btnsList:focus {
   outline: none;
   background-color: darkgreen;
 }

@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { UseStorage } from './UseContext';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Login from './Components/Login/Login';
 import User from './Components/User/User';
-import { UseStorage } from './UseContext';
+import NotFound from './Components/NotFound';
+import ProtectedRoute from './Components/Helper/ProtectedRoute';
 
 
 function App() {
@@ -18,7 +20,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/login/*" element={<Login />} />
-            <Route path="/user/*" element={<User />} />
+            <ProtectedRoute path="/user/*" element={<User />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
 
           <Footer />
