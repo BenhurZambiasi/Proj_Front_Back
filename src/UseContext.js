@@ -148,6 +148,7 @@ export const UseStorage = ({ children }) => {
           }
         }).then(response => {
           if (response.statusText === "OK") {
+            window.location.reload()
           } else {
             swal("Id não encontrado", "informe um id válido", "error")
           }
