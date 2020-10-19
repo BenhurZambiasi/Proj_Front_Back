@@ -18,9 +18,6 @@ const LoginForm = () => {
 
   function handleSubmit(event) {
     event.preventDefault();
-    const userEmail = event.target.elements.email.value;
-
-    sessionStorage.setItem('@welcome-app/email', userEmail)
     userLogin(email.value, password.value);
     navigate('/user')
   }
@@ -50,7 +47,7 @@ const LoginForm = () => {
       <form className={styles.form} onSubmit={handleSubmit}>
         <Input label="Email" type="email" name="email" {...email} />
         <Input label="Senha" type="password" name="password" {...password} />
-        <Button type="submit">Entrar</Button>
+        <Button type="submit">Carregando</Button> : <Button type="submit">Entrar</Button>
       </form>
       <div className={styles.cadastro}>
         <p>Ainda não possui conta? <Link className={stylesBtn.button} to="/login/criar">Cadastre-se aqui</Link></p>

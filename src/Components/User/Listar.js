@@ -20,8 +20,8 @@ const Listar = () => {
   }
 
   function getIdDelete(id) {
-    const del = id;
-    deleteProduct(del)
+    deleteProduct(id)
+
   }
 
   function getList(id) {
@@ -48,6 +48,7 @@ const Listar = () => {
 
       <div className={styles.containerList}>
         <div className={styles.list}>
+
           {listas.map((list) =>
             <div className={`animeLeft ${styles.lista}`} key={list.id}>
               <div className={styles.product}>
@@ -62,7 +63,7 @@ const Listar = () => {
                   <div className={styles.btnList}>
 
                     <button className={styles.btnsList} onClick={() => getIdDelete(list.id)}>Deletar</button>
-                    <button className={styles.btnsList} onClick={() => getList(list.id)}>Atualizar</button>
+                    <button className={styles.btnsList} onClick={() => getList(list.id)}>Editar</button>
 
                   </div>
                 </div>

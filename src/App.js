@@ -18,7 +18,7 @@ function App() {
           <Header />
 
           <Routes>
-            <Route path="/" element={<Login />} />
+            <Route path="//*" element={<Login />} />
             <Route path="/login/*" element={<Login />} />
             <ProtectedRoute path="/user/*" element={<User />} />
             <Route path="*" element={<NotFound />} />

@@ -36,6 +36,8 @@ export const UseStorage = ({ children }) => {
     Api.post('/sessions', { email, password }).then(response => {
       if (response.data.user.id) {
         sessionStorage.setItem("token", response.data.token)
+        const userEmail = response.data.user.email
+        sessionStorage.setItem('@welcome-app/email', userEmail)
         navigate('/user')
       }
       sessionStorage.getItem('token');

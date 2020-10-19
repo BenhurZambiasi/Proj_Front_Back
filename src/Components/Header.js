@@ -8,15 +8,11 @@ import { UseContext } from '../UseContext';
 const Header = () => {
   const { data } = React.useContext(UseContext);
   const userEmail = sessionStorage.getItem('@welcome-app/email');
-
-
-
-
   return (
     <header className={styles.header}>
       <nav className={`${styles.nav} container`}>
         <Link className={styles.logo} to="/login" aria-label="Home"> <Home /> </Link>
-        <h1>Casa das Ferragens</h1>
+        <h1>Área do usuário</h1>
 
 
         {userEmail ? (<p className={styles.login} > {userEmail} {data.email}  </p>) : (
