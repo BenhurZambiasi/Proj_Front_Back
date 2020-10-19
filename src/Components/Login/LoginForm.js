@@ -47,7 +47,7 @@ const LoginForm = () => {
       <form className={styles.form} onSubmit={handleSubmit}>
         <Input label="Email" type="email" name="email" {...email} />
         <Input label="Senha" type="password" name="password" {...password} />
-        <Button type="submit">Carregando</Button> : <Button type="submit">Entrar</Button>
+        <Button type="submit">Entrar</Button>
       </form>
       <div className={styles.cadastro}>
         <p>Ainda não possui conta? <Link className={stylesBtn.button} to="/login/criar">Cadastre-se aqui</Link></p>

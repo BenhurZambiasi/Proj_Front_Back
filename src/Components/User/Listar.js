@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import useForm from '../../Hooks/useForm';
 import { UseContext } from '../../UseContext';
 import Button from '../Forms/Button';
-import Input from '../Forms/Input';
 import styles from './Listar.module.css'
 
 
@@ -21,6 +20,7 @@ const Listar = () => {
 
   function getIdDelete(id) {
     deleteProduct(id)
+
 
   }
 
@@ -41,7 +41,7 @@ const Listar = () => {
       <div className={styles.form}>
         <form className="animeLeft" onSubmit={handleList}>
           <h4>Para listar todos clique em buscar</h4>
-          <Input type="number" name="id"{...id} placeholder="informe o id do produto" />
+          <input type="number" name="id"{...id} placeholder="informe o id do produto" />
           <Button type="submit">Buscar</Button>
         </form>
       </div>
