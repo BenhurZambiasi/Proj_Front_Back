@@ -7,12 +7,17 @@
 
 
 .cadastro {
+  display: flex;
   margin-top: 2.6rem;
   width: 35rem;
 }
-
+.cadastro button{
+  width: 11rem;
+}
 .cadastro p {
-  margin-top: 2rem;
+  font-size: 19pt;
+  margin-top: 0.5rem;
+  margin-right: 1rem;
   margin-bottom: 1.2rem;
   color: black;
 }
@@ -56,8 +61,12 @@ h1::after {
   width: 18rem;
 }
 .cadastro {
+  display: grid;
   margin-top:0;
   width: 15rem;
+}
+.cadastro p{
+font-size: 15pt;
 }
 .cadastro button{
   width: 10rem;

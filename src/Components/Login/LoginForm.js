@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Input from '../Forms/Input';
 import Button from '../Forms/Button';
 import styles from './LoginForm.module.css';
-import stylesBtn from '../Forms/Button.module.css';
+
 import { UseContext } from '../../UseContext';
 import useForm from '../../Hooks/useForm';
 
@@ -53,7 +53,7 @@ const LoginForm = () => {
 
       </div>
       <div className={styles.cadastro}>
-        <p>Ainda não possui conta? <Button className={stylesBtn.button} onClick={() => navigate("/login/criar")}>Cadastre-se aqui</Button></p>
+        <p>Ainda não possui conta?</p> <Button onClick={() => navigate("/login/criar")}>Cadastre-se aqui</Button>
 
       </div>
     </section>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+
 import { UseContext } from '../../UseContext';
 import useForm from '../../Hooks/useForm';
 
@@ -7,7 +7,8 @@ import Button from '../Forms/Button';
 import Input from '../Forms/Input';
 
 import styles from './LoginCreate.module.css';
-import stylesBtn from '../Forms/Button.module.css';
+import { useNavigate } from 'react-router-dom';
+
 
 
 const LoginCreate = () => {
@@ -16,7 +17,7 @@ const LoginCreate = () => {
   const password = useForm();
 
   const { userCreate } = React.useContext(UseContext);
-
+  const navigate = useNavigate();
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -36,7 +37,7 @@ const LoginCreate = () => {
 
         <Input label="Senha" type="password" name="password" {...password} />
         <div className={styles.btn}>
-          <Button className={styles.btn}><Link className={stylesBtn.button} to="/login">Voltar</Link> </Button>
+          <Button className={styles.btn} onClick={() => navigate('/')}>Voltar</Button>
           <Button className={styles.btn} type="submit">Cadastrar</Button>
 
         </div>
