@@ -10,7 +10,7 @@ const Header = () => {
   const userEmail = sessionStorage.getItem('@welcome-app/email');
   return (
     <header className={styles.header}>
-      <nav className={`${styles.nav} container`}>
+      <nav className={`${styles.nav}`}>
         <Link className={styles.logo} to="/login" aria-label="Home"> <Home /> </Link>
         <h1>Área do usuário</h1>
 

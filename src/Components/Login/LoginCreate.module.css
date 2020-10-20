@@ -14,3 +14,28 @@
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
 }
+@media(max-width:360px){
+  .cadLogin{
+    display: grid;
+     justify-content: center;
+     margin-top: -6rem;
+     margin-left: -8rem;
+   }
+  .form {
+    margin-bottom: 4rem;
+    margin-top: 1rem;
+    width: 10rem;
+  }
+  .form input{
+    height: 2rem;
+    width: 18rem;
+  }
+.cadLogin h1{
+  font-size: 20pt;
+}
+  .btn{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}

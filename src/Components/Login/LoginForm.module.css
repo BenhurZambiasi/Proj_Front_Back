@@ -14,6 +14,7 @@
 .cadastro p {
   margin-top: 2rem;
   margin-bottom: 1.2rem;
+  color: black;
 }
 
 .title{
@@ -36,4 +37,52 @@ h1::after {
   height: 0.5rem;
   width: 4rem;
   border-radius: 0.2rem;
+}
+
+@media(max-width:360px){
+  .cadLogin{
+   display: grid;
+    justify-content: center;
+    margin-top: -6rem;
+    margin-left: -8rem;
+  }
+.form {
+  margin-bottom: 4rem;
+  margin-top: 1rem;
+  width: 10rem;
+}
+.form input{
+  height: 2rem;
+  width: 18rem;
+}
+.cadastro {
+  margin-top:0;
+  width: 15rem;
+}
+.cadastro button{
+  width: 10rem;
+}
+
+.title{
+  font-size: 1rem;
+}
+
+.logout{
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  margin-left: -5rem;
+}
+h2{
+  text-align: center;
+  margin-left: -5rem;
+}
+h1::after {
+  content: '';
+  display: block;
+  background: darkgreen;
+  height: 0.5rem;
+  width: 4rem;
+  border-radius: 0.2rem;
+}
 }

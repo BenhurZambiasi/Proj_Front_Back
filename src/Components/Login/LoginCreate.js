@@ -17,7 +17,7 @@ const LoginCreate = () => {
 
   const { userCreate } = React.useContext(UseContext);
 
-  
+
   async function handleSubmit(event) {
     event.preventDefault();
     userCreate(name.value, email.value, password.value);
@@ -26,7 +26,7 @@ const LoginCreate = () => {
 
 
   return (
-    <section className="animeLeft">
+    <section className={`animeLeft ${styles.cadLogin}`}>
       <h1 className="title">Cadastre-se</h1>
 
       <form className={styles.form} onSubmit={handleSubmit}>

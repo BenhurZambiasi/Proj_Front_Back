@@ -36,6 +36,7 @@ const Att = () => {
         <Button onClick={() => navigate('/user/listar')}>Listar</Button>
         <Button > Atualizar Cadastro </Button>
       </div>
+ 
       <div className={styles.form}>
         <form className="animeLeft" onSubmit={handleAtualiza}>
           <Input label="ID" type="number" name="id"{...id} value={`${idAtt}`} />

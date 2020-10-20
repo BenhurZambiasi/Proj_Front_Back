@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Input from '../Forms/Input';
 import Button from '../Forms/Button';
 import styles from './LoginForm.module.css';
@@ -31,7 +31,7 @@ const LoginForm = () => {
 
   if (username) {
     return (
-      <div >
+      <div className={styles.divLogout}>
         <h2>Bem vindo {username}</h2>
         <div className={styles.logout}>
           <Button onClick={handleLogout}>Sair</Button>
@@ -42,15 +42,18 @@ const LoginForm = () => {
   }
 
   return (
-    <section className="animeLeft">
-      <h1 className="title">Login</h1>
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <Input label="Email" type="email" name="email" {...email} />
-        <Input label="Senha" type="password" name="password" {...password} />
-        <Button type="submit">Entrar</Button>
-      </form>
+    <section className={`animeLeft ${styles.cadLogin}`}>
+      <div className={styles.login}>
+        <h1 className="title">Login</h1>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <Input label="Email" type="email" name="email" {...email} />
+          <Input label="Senha" type="password" name="password" {...password} />
+          <Button type="submit">Entrar</Button>
+        </form>
+
+      </div>
       <div className={styles.cadastro}>
-        <p>Ainda não possui conta? <Link className={stylesBtn.button} to="/login/criar">Cadastre-se aqui</Link></p>
+        <p>Ainda não possui conta? <Button className={stylesBtn.button} onClick={() => navigate("/login/criar")}>Cadastre-se aqui</Button></p>
 
       </div>
     </section>

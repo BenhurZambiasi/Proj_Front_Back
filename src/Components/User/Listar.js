@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import useForm from '../../Hooks/useForm';
 import { UseContext } from '../../UseContext';
 import Button from '../Forms/Button';
+import Input from '../Forms/Input';
 import styles from './Listar.module.css'
 
 
@@ -38,13 +39,16 @@ const Listar = () => {
         <Button className={styles.active}>Listar</Button>
       </div>
 
-      <div className={styles.form}>
-        <form className="animeLeft" onSubmit={handleList}>
-          <h4>Para listar todos clique em buscar</h4>
-          <input type="number" name="id"{...id} placeholder="informe o id do produto" />
+      <div className={styles.divForm}>
+        <h4>Para listar todos clique em buscar</h4>
+        <form className={`animeLeft ${styles.form}`} onSubmit={handleList}>
+          <Input type="number" name="id"{...id} placeholder="informe o id do produto" />
           <Button type="submit">Buscar</Button>
         </form>
       </div>
+
+
+
 
       <div className={styles.containerList}>
         <div className={styles.list}>

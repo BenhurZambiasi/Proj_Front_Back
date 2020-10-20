@@ -20,6 +20,7 @@ export const UseStorage = ({ children }) => {
   function userCreate(name, email, password) {
     Api.post('/users', { name, email, password }).then(response => {
       if (response.data.id) {
+        swal('Cadastrado com sucesso', "", "success")
         navigate('/login')
       } else {
         swal("E-mail já existe", "", "error")

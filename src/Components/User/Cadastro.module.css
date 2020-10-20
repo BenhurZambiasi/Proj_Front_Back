@@ -1,5 +1,4 @@
 .organizador{
-  width:90%;
   display: grid;
   gap: 2rem;
   margin: 2rem auto;
@@ -9,7 +8,6 @@
     display: flex;
     margin: 0 auto;
     gap: 2rem;
-
   }
 
   .btn :nth-last-child(2){
@@ -19,4 +17,31 @@
   .form{
     width:35rem;
   }
- 
+
+ @media(max-width:360px){
+  .organizador{
+    width:90%;
+    display: grid;
+    gap: 2rem;
+    margin-left: 10rem;
+    justify-content: center;
+    }
+    .btn{
+      display: flex;
+      margin: 0 auto;
+      gap: 2rem;
+  
+    }
+  
+    .btn :nth-last-child(2){
+      background-color: darkgreen;
+    }
+  
+    .form{
+      width:20rem;
+      margin-left: 30px;
+    }
+    .form input{
+      height: 3rem;
+    }
+ }

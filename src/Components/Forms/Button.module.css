@@ -6,7 +6,7 @@
   border-radius: 0.4rem;
   background: black;
   color: white;
-  min-width: 10rem;
+  width:10rem;
   padding: 0.8rem 1.2rem;
   box-sizing: border-box;
   transition: 0.1s;
@@ -19,3 +19,11 @@
   background-color: darkgreen;
 }
 
+@media(max-width:360px){
+  .button{
+  width: 6rem;
+  height: 2rem;
+  margin-bottom: 0;
+  padding: 0;
+  }
+}

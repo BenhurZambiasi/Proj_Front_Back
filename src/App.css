@@ -10,6 +10,7 @@ body {
   --type-second: 'Spectral', Georgia;
   font-family: var(--type-first);
   height: 1vh;
+
 }
 
 h1,
@@ -72,3 +73,11 @@ a , button{
   }
 }
 
+@media(max-width:360px){
+  body{
+    width: 1vh;
+  }
+  .title{
+    font-size: 2rem;
+  }
+}
